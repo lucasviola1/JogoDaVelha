@@ -1,0 +1,131 @@
+.jogo-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.controles {
+  margin: 20px 0;
+  
+  button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: 2px solid #333;
+    background: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+
+    &.ativo {
+      background: #333;
+      color: white;
+    }
+
+    &:hover {
+      background: #f0f0f0;
+      
+      &.ativo {
+        background: #555;
+      }
+    }
+  }
+}
+
+.status {
+  margin: 20px 0;
+  font-size: 18px;
+  min-height: 30px;
+}
+
+.vencedor {
+  color: #2ecc71;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.empate {
+  color: #e74c3c;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.tabuleiro {
+  display: inline-block;
+  border: 3px solid #333;
+  border-radius: 10px;
+  margin: 20px 0;
+  background: #f8f9fa;
+}
+
+.linha {
+  display: flex;
+}
+
+.celula {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  background: white;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background: #e9ecef;
+  }
+
+  &:active {
+    background: #dee2e6;
+  }
+}
+
+.historico {
+  margin-top: 40px;
+  border-top: 2px solid #ddd;
+  padding-top: 20px;
+}
+
+.lista-resultados {
+  margin-top: 15px;
+}
+
+.resultado-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  margin: 5px 0;
+}
+
+.vencedor-info {
+  font-weight: bold;
+  
+  &.x {
+    color: #e74c3c;
+  }
+  
+  &.o {
+    color: #3498db;
+  }
+  
+  &.empate {
+    color: #f39c12;
+  }
+}
+
+.sem-resultados {
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+.data {
+  color: #95a5a6;
+  font-size: 14px;
+}

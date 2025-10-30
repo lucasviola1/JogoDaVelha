@@ -1,0 +1,58 @@
+<div class="jogo-container">
+  <h1>Jogo da Velha</h1>
+  
+  <div class="controles">
+    <button 
+      (click)="alterarModoJogo('humano')" 
+      [class.ativo]="modoJogo === 'humano'">
+      Humano vs Humano
+    </button>
+    <button 
+      (click)="alterarModoJogo('maquina')" 
+      [class.ativo]="modoJogo === 'maquina'">
+      Humano vs Máquina
+    </button>
+    <button (click)="novoJogo()">Novo Jogo</button>
+  </div>
+
+  <div class="status">
+    <div *ngIf="!vencedor && !empate">
+      Vez do jogador: <strong>{{ jogadorAtual }}</strong>
+    </div>
+    <div *ngIf="vencedor" class="vencedor">
+      🎉 Jogador <strong>{{ vencedor }}</strong> venceu!
+    </div>
+    <div *ngIf="empate" class="empate">
+      🤝 Empate!
+    </div>
+  </div>
+
+  <div class="tabuleiro">
+    <div class="linha" *ngFor="let linha of tabuleiro; let i = index">
+      <div 
+        class="celula" 
+        *ngFor="let celula of linha; let j = index"
+        (click)="fazerJogada(i, j)"
+        [class.vencedor]="vencedor">
+        {{ celula }}
+      </div>
+    </div>
+  </div>
+
+  <div class="historico">
+    <h2>Últimos 10 Resultados</h2>
+    <div *ngIf="ultimosResultados.length === 0" class="sem-resultados">
+      Nenhum resultado encontrado
+    </div>
+    <div class="lista-resultados">
+      <div 
+        class="resultado-item" 
+        *ngFor="let resultado of ultimosResultados">
+        <span class="vencedor-info" [class]="resultado.vencedor.toLowerCase()">
+          {{ resultado.vencedor }}
+        </span>
+        <span class="data">{{ resultado.dataHora | date:'dd/MM/yyyy HH:mm' }}</span>
+      </div>
+    </div>
+  </div>
+</div>
