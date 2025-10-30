@@ -6,7 +6,9 @@ Com a IDE de sua preferencia aberta abra o terminal e rode os respectivos comand
 Backend (.NET 9)
 
 cd api
+
 dotnet restore
+
 dotnet run
 
 API: https://localhost:5281
@@ -14,7 +16,9 @@ API: https://localhost:5281
 Frontend (Angular)
 
 cd front
+
 npm i
+
 ng s
 
 Frontend: http://localhost:4200
@@ -33,6 +37,7 @@ No arquivo appsettings.json da API, altere a connection string:
 2. Instalar PostgreSQL Provider
 
 cd api
+
 dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
 
 3. Executar Migrations
